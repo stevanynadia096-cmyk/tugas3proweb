@@ -1,0 +1,36 @@
+<body>
+<form name="formdaftar">
+    <table>
+        <tr>
+            <td>Input Bilangan 1</td>
+            <td><input type="number" name="bil1" size="30"></td>
+        </tr>
+        <tr>
+            <td>Input Bilangan 2</td>
+            <td><input type="number" name="bil2" size="30"></td>
+        </tr>
+        <tr>
+            <td>
+            <td><button type="button" name="submit" onclick="hitung('+')">+</button>
+                <button type="button" name="submit" onclick="hitung('-')">-</button>
+                <button type="button" name="submit" onclick="hitung('*')">x</button>
+                <button type="button" name="submit" onclick="hitung('/')">/</button></td>
+            </td>  
+        </tr>
+        <tr>
+            <td>Output</td>
+            <td><input type="number" id="output" size="30" readonly></td>
+        </tr>
+    </table>
+</form>
+<script>
+    function hitung(op)
+    {
+    let bilangan1 = parseFloat(document.formdaftar.bil1.value);
+    let bilangan2 = parseFloat(document.formdaftar.bil2.value);
+
+    let hasil = eval(bilangan1 + op + bilangan2); 
+    document.getElementById("output").value = hasil;
+    }
+</script>
+</body>
